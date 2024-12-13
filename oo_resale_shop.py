@@ -99,18 +99,26 @@ def main():
     inventory = []
     my_ResaleShop = ResaleShop(inventory, itemID = 0)
 
-    # buys both computers, reports how many are in inventory
+    # buys both computers, returns inventory
     my_ResaleShop.buy(my_computer)
     my_ResaleShop.buy(your_computer)
     print("Your inventory currently consists of", 
           my_ResaleShop.inventory)
 
+    # sells first computer, returns inventory
     my_ResaleShop.sell(my_computer)
     print("Computer sold!", 
           "Your inventory currently consists of", 
           my_ResaleShop.inventory)
     
-    my_ResaleShop.refurbish(your_computer, "old_OS")
+    # updates OS of second computer
+    my_ResaleShop.updateOS(your_computer, "Sonoma")
+
+    # updates price of second computer
+    my_ResaleShop.updatePrice(your_computer, 1000)
+
+    # refurbishes second computer
+    my_ResaleShop.refurbish(your_computer, "Sonoma")
 
 if __name__ == "__main__":
     main()
