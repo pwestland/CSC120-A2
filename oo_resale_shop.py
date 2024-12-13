@@ -73,5 +73,44 @@ class ResaleShop:
         else:
             print("Computer not in inventory.")
 
+def main():
 
+    # makes first example computer
+    my_computer = Computer(
+        "2023 MacBook Pro",
+        "Apple M3 Pro",
+        994.66,
+        36,
+        "Sonoma",
+        2023,
+        1500)
+    
+    # makes second example computer
+    your_computer = Computer(
+        "2019 MacBook Pro",
+        "Intel",
+        256,
+        16,
+        "High Sierra",
+        2019,
+        1000)
+    
+    # creates the inventory and Resale Shop
+    inventory = []
+    my_ResaleShop = ResaleShop(inventory, itemID = 0)
 
+    # buys both computers, reports how many are in inventory
+    my_ResaleShop.buy(my_computer)
+    my_ResaleShop.buy(your_computer)
+    print("Your inventory currently consists of", 
+          my_ResaleShop.inventory)
+
+    my_ResaleShop.sell(my_computer)
+    print("Computer sold!", 
+          "Your inventory currently consists of", 
+          my_ResaleShop.inventory)
+    
+    my_ResaleShop.refurbish(your_computer, "old_OS")
+
+if __name__ == "__main__":
+    main()
